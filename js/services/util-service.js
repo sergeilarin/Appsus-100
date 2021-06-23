@@ -13,7 +13,7 @@ function loadFromStorage(key) {
     return (data) ? JSON.parse(data) : undefined;
 }
 
-function makeId(length = 7) {
+function makeId(length =5) {
     var txt = '';
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     for (var i = 0; i < length; i++) {
