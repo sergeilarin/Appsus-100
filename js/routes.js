@@ -1,7 +1,7 @@
 
 import homePage from './pages/home-page.js';
 import  mailApp from './apps/mail/mail.js';
-import keepApp from './apps/keep/keep.js';
+import keepApp from './apps/keep/pages/keep-app.js';
 
 
 const routes = [
