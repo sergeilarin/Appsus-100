@@ -1,9 +1,9 @@
 export default {
     template: `
     <header class="appsus-header">
-        <div class="logo">
-            <h3>Miss Book</h3>
-        </div>
+       
+            <h3>Apps plase</h3>
+    
         <nav>
             <router-link to="/" active-class="active-link" exact>Home</router-link> |
             <router-link to="/mail" >Mail</router-link> |

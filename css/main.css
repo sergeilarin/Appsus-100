@@ -3,8 +3,25 @@
 *{
     box-sizing: border-box;
 }
+.appsus-header{
+    display: flex;
+    justify-content: space-between;
+}
 .app-main img{
     height: 100%;
     width: 100%;
     object-fit: contain;
+}
+.maile-app{
+    display: flex;
+    flex-direction: column;
+}
+.action-container{
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+}
+.main-maile{
+    display: flex;
+    justify-content: space-between;
 }
