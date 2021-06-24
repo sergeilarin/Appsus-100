@@ -10,18 +10,18 @@ export default {
     template: `
         <section class="maile-app">
             <email-filter @filtered="setFilter" /></email-filter>
-            <div >{{getUnreadNum}}</div>
+           
             <div class="options-container">
                 <div class="action-nav">
                    <button  @click="creatNewMail">+ Compose</button>
-                   <button>Inbox ({{emails.length}})</button>
+                   <button>Inbox ({{emails.length}}) unread({{getUnreadNum}})</button>
                    <button>Starred</button>
                    <button >Sent Mail</button>
                    <button>Drafts</button>
                    <button>Read</button>
                 </div>
                 <new-email v-if="isNewMail" @onSendEmail="sendEmail"></new-email>
-                <email-list v-else :emails="emailsToShow" @remove="removeEmail" @selected="selectEmail"></email-list>
+                <email-list v-else :emails="emailsToShow" @remove="removeEmail" @selected="selectEmail" ></email-list>
                
             </div>
         </section>
