@@ -12,19 +12,19 @@ export default {
         <component v-for="note in notes" :key="note.id" class="preview-container" 
             :is="note.type"
             :note="note" >
-            <button class="btn delete" @click.stop="remove(note.id)">Delete</button>
+            <!-- <button class="btn delete" @click.stop="remove(note.id)">Delete</button> -->
         </component>
-        <button class="btn delete" @click.stop="remove(note.id)">Delete</button>
+        <!-- <button class="btn delete" @click.stop="remove(note.id)">Delete</button> -->
             <!-- <keep-preview @update="updateNote(note)"></keep-preview> -->
         </li>
     </ul>
 
     `,
     methods: {
-        remove(noteId) {
-            console.log(noteId, 'id remov');
-            this.$emit('remove', noteId);
-        },
+        // remove(noteId) {
+        //     console.log(noteId, 'id remov');
+        //     this.$emit('remove', noteId);
+        // },
         // updateNote(note) {
         //     this.$emit('updateNote', note);
         // },
