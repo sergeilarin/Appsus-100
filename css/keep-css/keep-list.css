@@ -10,11 +10,14 @@
     border: 1px solid black;
     border-radius: 5px;
     margin: 15px;
-    padding: 10px;
+    
     height: 150px;
     width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+}
+.il{
+   padding: 10px; 
 }
