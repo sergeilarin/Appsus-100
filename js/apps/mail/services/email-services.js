@@ -13,7 +13,7 @@ export const emailService = {
     query,
     removeEmail,
     getEmailById,
-    // addReview,
+    sendNewEmail,
 
 };
 
@@ -32,7 +32,6 @@ function query() {
         })
 }
 function removeEmail(emailId) {
-    console.log('hi');
     return storageService.remove(EMAILS_KEY, emailId);
 }
 
@@ -40,14 +39,9 @@ function getEmailById(emailId) {
     return storageService.get(EMAILS_KEY, emailId);
 }
 
-// function addReview(bookId, review) {
-//     review.id = utilitiesService.makeId();
-//     return getBookById(bookId).then(book => {
-//         // return Promise.reject('ERROR GORNISHT')
-//         if (!book.reviews) book.reviews = [];
-//         book.reviews.push(review);
-//         return storageService.put(BOOKS_KEY, book);
-//     })
-// }
+function sendNewEmail(email) {
+    return storageService.post(EMAILS_KEY, email);
+    
+}
 
 
