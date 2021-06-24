@@ -4,10 +4,15 @@ export default {
    
         <div class="main-il">
         <p >{{note.title}}</p>
-        <p>{{note.txt}}</p>
-        <div>
-        <keep-preview></keep-preview>
-`
+        <p>{{note.info.txt}}</p>
+        <button>x</button>
+</div>
+        <!-- <keep-preview></keep-preview> -->
+`,
+created(){
+    console.log(this.note, 'zvtodotodo');
+}
+
 
      
     }

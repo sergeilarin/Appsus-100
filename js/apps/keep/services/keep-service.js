@@ -4,7 +4,7 @@ import { storageService } from '../../../services/async-storage-service.js'
 
 const KEEPS_KEY = 'notes';
 const gNotes = [{
-    type: "noteText",
+    type: "textNote",
     isPinned: false,
     title: '',
     info: {
@@ -13,7 +13,7 @@ const gNotes = [{
     background:''
     },
     {
-    type: "noteToDo",
+    type: "todoNote",
     isPinned: false,
     title: '',
     info: {
@@ -26,7 +26,7 @@ const gNotes = [{
     background:''
     },
     {
-    type: "noteImg",
+    type: "imagNote",
     isPinned: false,
     title: '',
     info: {
