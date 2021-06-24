@@ -5,21 +5,29 @@ export default {
     <section class="new-email">
         <h2>New Message</h2>
         <label >To: </label>
-        <input v-model="searchBy.title" @input.lazy="getSearchResults" type="text" placeholder="Search by Name...">
-        <!-- <section  v-if="searchResults">{{searchResults}}</section> -->
-        <search-list @addBook="addBook" v-if="searchResults" :searchResults="searchResults" />  
+        <input v-model="newEmail.to"  type="text" placeholder="''">
+        <label >Topic: </label>
+        <input v-model="newEmail.subject"  type="text" placeholder="''">
+        <label >Subject: </label>
+        <input v-model="newEmail.body"  type="text" placeholder="''">
+		<div><button @click="onSendEmail">v</button><button>x</button></div>
         
     </section>`,
 	data() {
 		return {
-			searchBy: {
-				title: '',
+			newEmail: {
+				to: '',
+				subject: '',
+				body: '',
+				isRead: false,
+				sentAt: ''
 			},
-			searchResults: null,
-			book: null,
 		};
 	},
 	methods: {
-		
+		onSendEmail() {
+			this.newEmail.sentAt = Date.now()
+			this.$emit('onSendEmail', this.newEmail);
+		}
 	},
 };

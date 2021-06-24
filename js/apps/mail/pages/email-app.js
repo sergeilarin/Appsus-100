@@ -1,33 +1,38 @@
 import { emailService } from '../services/email-services.js';
 import emailList from '../cmps/email-list.js';
 import emailFilter from '../cmps/email-filter.js';
+import emailDetails from '../cmps/email-details.js';
+import newEmail from '../cmps/new-email.js';
+
 // import { eventBus } from '../services/event-bus-service.js';
 
 export default {
     template: `
         <section class="maile-app">
             <email-filter @filtered="setFilter" /></email-filter>
-            <div class="main-maile">
-                <div class="action-container">
-                   <button>Inbox</button>
+            <div >{{getUnreadNum}}</div>
+            <div class="options-container">
+                <div class="action-nav">
+                   <button  @click="creatNewMail">+ Compose</button>
+                   <button>Inbox ({{emails.length}})</button>
                    <button>Starred</button>
-                   <button>Sent Mail</button>
+                   <button >Sent Mail</button>
                    <button>Drafts</button>
                    <button>Read</button>
                 </div>
-                <email-list :emails="emailsToShow" @remove="removeEmail"></email-list>
-                
-                <!-- <book-list v-if="!selectedBook" :books="booksToShow" @selected="selectBook" />  -->
+                <new-email v-if="isNewMail" @onSendEmail="sendEmail"></new-email>
+                <email-list v-else :emails="emailsToShow" @remove="removeEmail" @selected="selectEmail"></email-list>
+               
             </div>
-            <!-- <router-link class="addBook" to="/book/add"></router-link> -->
-            <!-- <book-details v-else :book="selectedBook" @close="closeDetails"></book-details>  -->
         </section>
     `,
     data() {
         return {
             emails: [],
             selectedEmail: null,
-            filterBy: null
+            filterBy: null,
+            isNewMail: false,
+            sentMail: []
         };
     },
     created() {
@@ -40,24 +45,38 @@ export default {
                     this.emails = emails
                 });
         },
-        removeEmail(id){
-            console.log('ser');
+        removeEmail(id) {
             emailService.removeEmail(id)
-            .then(()=>{
-                this.loadEmails()
-            })
+                .then(() => {
+                    this.loadEmails()
+                })
         },
         setFilter(filterBy) {
             console.log(filterBy);
             this.filterBy = filterBy;
         },
-        // selectBook(bookId) {
-        //     const book = bookService.getBookById(bookId);
-        //     this.selectedBook = book;
-        // },
-        // closeDetails() {
-        //     this.selectedBook = false;
-        // },
+        closeDetails() {
+            this.selectedEmail = false;
+        },
+        selectEmail(emailId) {
+            emailService.getEmailById(emailId)
+                .then(email => {
+                    this.selectedEmail = email;
+
+                })
+        },
+        creatNewMail() {
+            this.isNewMail = true
+        },
+        sendEmail(email) {
+            this.sentMail.push(email)
+            console.log(this.sentMail);
+            this.isNewMail = false
+            emailService.sendNewEmail(email)
+                .then(() => {
+                    this.loadEmails()
+                })
+        },
     },
     computed: {
         emailsToShow() {
@@ -68,15 +87,30 @@ export default {
             const searchStr = this.filterBy.txt.toLowerCase();
             const emailsToShow = this.emails.filter((email) => {
                 return (
+                    email.subject.toLowerCase().includes(searchStr) +
                     email.body.toLowerCase().includes(searchStr)
                 );
             });
+
             return emailsToShow;
         },
+        getUnreadNum() {
+            const num = this.emails.filter((email) => {
+                return (
+                    email.isRead===false
+                );
+            });
+            console.log(num);
+            return num.length
+        }
     },
     components: {
         emailList,
         emailFilter,
+        emailDetails,
+        newEmail
+
+
     }
 };
 
