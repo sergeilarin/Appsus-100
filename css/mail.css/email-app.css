@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+.maile-app{
+    display: flex;
+    flex-direction: column;
+}
+.options-container{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.action-nav{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+
+}
+.options-container button{
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: start;
+    border: none;
+    font-size: .875rem;
+    color: #202124;
+    margin:1px 0;
+    height: 32px;
+    padding: 0 26px 0 12px;
+    width: 100%;
+    
+}
+.options-container button:hover{
+    background-color: rgb(209, 202, 202);
+    
+}
