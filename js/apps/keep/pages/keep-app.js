@@ -5,8 +5,8 @@ import keepList from "../cmps/keep-list.js";
 
 export default {
     template: `
-        <section class="">
-            <h2>keep</h2>
+        <section class="main-rontainer">
+           
             <main-nav @filter="setFilter" ></main-nav>
             <keep-add @noteAdd="addnote" ></keep-add>
             <keep-list v-if="notes" :notes="notesToShow" @remove="onRemoveNote"  @updateNote="newUpDate"></keep-list>

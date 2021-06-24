@@ -1,0 +1,87 @@
+@font-face {
+    font-family: logo;
+    src: url(/founts/logo/eurof55.ttf);
+}
+
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.preview-container {
+    border: 1px solid black;
+    border-radius: 7px;
+    margin: 15px;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-color: lightgoldenrodyellow;
+}
+.main-il{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.il {
+    padding: 10px;
+}
+
+.main-nav-keep {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-right: 586px;
+    padding-top: 10px;
+}
+
+
+.logo {
+    font-size: 3em;
+    font-family: logo, monospace;
+    margin-left: 10px;
+    color: lightgoldenrodyellow;
+}
+.main-rontainer{
+    background-color: dimgray;
+}
+.add{
+    border-radius: 7px;
+    border:none;
+    height: 30px;
+
+}
+.main-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+}
+
+.delete{
+   margin-bottom: 2px;
+   border-radius: 3px;
+   border:none;
+}
+.edit{
+    border-radius: 3px;
+    border:none;
+}
+.btn:hover{
+    cursor: pointer;
+    background: gold;
+}
+

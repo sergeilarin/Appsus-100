@@ -1,12 +1,16 @@
-import keepPreview from "./keep-preview.js";
+import imagNote from '../cmps/imag-note.js';
+import todoNote from '../cmps/todo-note.js';
+import textNote from '../cmps/text-note.js';
 
 export default {
     props: ['notes'],
     template: `
     <ul class="list">
         <li v-for="note in notes" :key="note.id" class="preview-container"  >
-            <keep-preview :note="note" @update="updateNote(note)"/>
-            <button @click.stop="remove(note.id)">X</button>
+        <component :is="note.type" :note="note" >
+             <!-- @update="updateNote(note)" -->
+             </component>
+            <button class="btn delete" @click.stop="remove(note.id)">Delete</button>
         </li>
     </ul>
     `,
@@ -20,7 +24,10 @@ export default {
         }
 
     },
-    components: {
-        keepPreview
+    components: {  
+        imagNote,
+        todoNote,
+        textNote,
+   
     },
 };

@@ -1,10 +1,12 @@
 export default {
     template:`
-        <section >
-            <form>
-            <label>Search 🔍</label>
-        <input v-model="searchBy.txt" type="text" placeholder="Search...">
-        <button @click="filter">search</button>
+        <section class="main-nav-keep" >
+        <div class="logo">keep</div>
+        <!-- <img src="imgs/keep-logo4.jpg" alt=""> -->
+            <form class="search">
+            <!-- <label>Search </label> -->
+        <input v-model="searchBy.txt" type="text" placeholder="  Search🔍" @input="filter" style="width: 350px; height: 30px; border-radius: 7px; border:none;">
+        <!-- <button>search</button> -->
             </form>
         </section>
     `,
