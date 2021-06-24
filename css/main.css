@@ -1,4 +1,11 @@
 @import './keep-css/keep-list.css';
+@import '../css/cmps/appsus-footer.css';
+@import '../css/mail.css/email-app.css';
+@import '../css/mail.css/email-details.css';
+@import '../css/mail.css/email-list.css';
+@import '../css/mail.css/email-preview.css';
+@import '../css/mail.css/email-filter.css';
+@import '../css/mail.css/new-email.css';
 
 *{
     box-sizing: border-box;
@@ -11,21 +18,4 @@
     height: 100%;
     width: 100%;
     object-fit: contain;
-}
-.maile-app{
-    display: flex;
-    flex-direction: column;
-}
-.action-nav{
-    display: flex;
-    flex-direction: column;
-    width: 60px;
-}
-.options-container{
-    display: flex;
-    justify-content: space-between;
-}
-.email-container{
-    display: flex;
-    flex-direction: column;
 }

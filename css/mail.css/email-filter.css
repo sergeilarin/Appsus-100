@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+.email-filter{
+    background-color: rgb(236, 192, 138);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.email-filter input{
+    padding: 7px;
+    font-size: 15px;
+    color: black;
+    border: none;
+    height: 30px;
+
+}

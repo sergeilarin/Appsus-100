@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+.new-email{
+border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+.new-email h2{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgb(77, 74, 74);
+    color: blanchedalmond;
+    padding-left: 20px;
+    margin: 0 0 0 0 ;
+    font-size: 20px;
+}
+.new-email input{
+    border: none;
+    width: 90%;
+}
+.new-input{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 5px;
+    display: flex;
+}
+.subject-input{
+  display: flex;
+  height: 200px;
+}
+.subject-input textarea{
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.new-mail-btn{
+    display: flex;
+}

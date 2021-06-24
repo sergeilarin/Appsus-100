@@ -1,0 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+.appsus-footer{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
