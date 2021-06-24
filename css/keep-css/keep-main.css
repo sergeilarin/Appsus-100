@@ -84,4 +84,7 @@
     cursor: pointer;
     background: gold;
 }
-
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}

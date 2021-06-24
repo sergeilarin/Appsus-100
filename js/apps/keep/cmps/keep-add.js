@@ -6,9 +6,9 @@ export default {
             <form class="main-input">
                 <div>
                 <input ref="note" v-model="note.title" id="inside" focus=" outline: none" type="text" placeholder ="  Add note" style="width: 350px; height: 30px; border-radius: 7px; border:none; margin-left: 10px;">
-                <button title="Add note text" class="btn add" @click="onSave('noteText')">➕</button>
-                <button title="Add note todos" class="btn add" @click="onSave('noteToDo')">📝</button>
-                <button title="Add note imag" class="btn add" @click="onSave('noteImg')">🌄</button>
+                <button title="Add note text" class="btn add" @click="onSave('textNote')">➕</button>
+                <button title="Add note todos" class="btn add" @click="onSave('todoNote')">📝</button>
+                <button title="Add note imag" class="btn add" @click="onSave('imagNote')">🌄</button>
                 </div>
                 <input v-if="note.title" v-model="note.txt" type="text" placeholder="" style="width: 350px; height: 30px; border-radius: 7px;  border:none;" >
             </form>
@@ -17,7 +17,7 @@ export default {
     data() {
         return {
             note: {
-                type: 'noteText',
+                type: 'textNote',
                 isPinned: false,
                 title: '',
                 info: {
@@ -31,10 +31,11 @@ export default {
     methods: {
         onSave(type) {
             this.note.type = type
-            switch (type) {
-                case 'noteText':
-                    this.note
-                case 'noteToDo':
+            switch (this.note.type) {
+                case 'textNote':
+                    this.note.info = 'סתם'
+                    break;
+                case 'todoNote':
                     this.note.info = {
                         todo: [
                             {
@@ -42,15 +43,17 @@ export default {
                             }
                         ]
                     }
-                case 'noteImg':
+                    break;
+                case 'imagNote':
                     this.note.info = {
+
                         url: ''
                     }
+                    break;
             }
-            console.log(this.note.info);
             this.$emit('noteAdd', this.note),
                 this.note = {
-                    type: "noteText",
+                    type: "textNote",
                     isPinned: false,
                     title: '',
                     info: {
