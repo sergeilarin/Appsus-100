@@ -20,5 +20,5 @@ width: 100%;
 .email-preview-container:hover{
     cursor: pointer;
     height: 34px;
-    box-shadow: 0px 0px 6px 2px #000000;
+    box-shadow: inset 1px -1px 12px 1px #ABABAB,0px 0px 0px -100px #cecccc;
 }

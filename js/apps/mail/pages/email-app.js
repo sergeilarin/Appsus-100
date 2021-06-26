@@ -14,10 +14,10 @@ export default {
             <div class="options-container">
                 <div class="action-nav">
                    <button class="compose-btn"  @click="creatNewMail">+ Compose</button>
-                   <button @click="showInboxtMail">Inbox ({{emails.length}})</button>
-                   <button @click="onStarred">Starred</button>
-                   <button @click="showSentMails">Sent Mail</button>
-                   <button>Drafts</button>
+                   <button @click="showInboxtMail" class="inbox-btn"> <img src="./imgs/icons8-inbox-30.png" alt=""> <span>Inbox  {{emails.length}}</span></button>
+                   <button @click="onStarred">  <img src="./imgs/icons8-star-filled-24.png" alt=""><span>Starred</span></button>
+                   <button @click="showSentMails"><img src="./imgs/icons8-sent-30.png" alt=""><span>Sent Mail</span></button>
+                   <!-- <button>Drafts</button> -->
                 </div>
                 <new-email v-if="isNewMail" @onSendEmail="sendEmail"></new-email>
                 <email-list v-else :emails="emailsToShow" @remove="removeEmail" @selected="selectEmail" ></email-list>

@@ -3,10 +3,10 @@ import { utilService } from "../../../services/util-service.js";
 
 const EMAILS_KEY = 'emails';
 const gMails = [
-    {id:utilService.makeId(),subject: 'Wassap?', body: 'Pick up!', isRead: true,isStarred: false, sentAt : 1511135930594},
-    {id:utilService.makeId(),subject: 'puki', body: 'Present the listed emails as read/unread', isRead: false,isStarred: false, sentAt : 1551933910594},
-    {id:utilService.makeId(),subject: 'hello', body: 'Create an email client app.', isRead: false,isStarred: false, sentAt : 1521163930594},
-    {id:utilService.makeId(),subject: 'To do', body: 'List of emails (inbox)', isRead: true,isStarred: false, sentAt : 1551833930594},
+    {id:utilService.makeId(),from:'Dropbox',subject: 'Wassap?', body: 'Pick up!', isRead: true,isStarred: false, sentAt : 1511135930594},
+    {id:utilService.makeId(),from:'Moshe',subject: 'Your network highlights', body: 'Present the listed emails as read/unread', isRead: false,isStarred: false, sentAt : 1551933910594},
+    {id:utilService.makeId(),from:'Didi',subject: 'hello', body: 'Create an email client app.', isRead: false,isStarred: false, sentAt : 1521163930594},
+    {id:utilService.makeId(),from:'Neomi',subject: 'To do', body: 'List of emails (inbox)', isRead: true,isStarred: false, sentAt : 1551833930594},
 ]
 
 export const emailService = {

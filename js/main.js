@@ -8,9 +8,7 @@ const options = {
     router,
     template: `
         <section class="maim-app">
-        <!-- <user-msg /> -->
-        <section>
-        <user-msg />
+            <user-msg />
             <appsus-header />
             <router-view />
             <appsus-footer />

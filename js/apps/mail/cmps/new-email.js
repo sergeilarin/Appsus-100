@@ -17,13 +17,13 @@ export default {
 			<textarea name="" id="" cols="30" rows="10" v-model="newEmail.body"></textarea>
 			<!-- <input v-model="newEmail.body"  type="text" placeholder="''"> -->
 		</div>
-		<div class="new-mail-btn"><button class="send" @click="onSendEmail">Send</button><button class="delete">x</button></div>
+		<div class="new-mail-btn"><button class="send" @click="onSendEmail">Send</button><button class="delete"><img src="./imgs/icons8-remove-30.png" alt=""></button></div>
         
     </section>`,
 	data() {
 		return {
 			newEmail: {
-				to: '',
+				from:'Puki',
 				subject: '',
 				body: '',
 				isRead: false,

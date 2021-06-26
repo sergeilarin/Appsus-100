@@ -5,6 +5,17 @@
     display: flex;
     flex-direction: column;
 }
+.openDetails{
+    width: 100%;
+    display: flex;
+    
+}
+.mail-from {
+   width: 100px;
+}
+.mail-subject{
+    margin-right: 10px;
+}
 
 .email-container{
     height: 34px;
@@ -20,7 +31,10 @@
     display: flex;
     align-items: center;
     height: 34px;
-    padding: 5px;
+}
+.prev-btn img{
+    height: 30px;
+    width: 30px;
 }
 .prev-btn span{
     display: flex;
@@ -31,14 +45,17 @@
     padding: 5px;
 }
 .prev-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     cursor: pointer;
-   min-width: 34px;
-    margin-left:7px;
+    min-width: 34px;
+    min-width: 34px;
     background-color: transparent;
     padding:0 0 0 0 ;
 }
 .prev-btn button:hover{
-background-color:lightsteelblue;
+background-color:rgb(226, 234, 243);
 border-radius: 50%;
 }

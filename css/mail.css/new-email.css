@@ -20,6 +20,7 @@
     font-size: 20px;
 }
 .new-email input{
+    outline: none;
     border: none;
     width: 90%;
 }
@@ -30,7 +31,7 @@
     display: flex;
 }
 .subject-input{
-  padding:0 10px;
+    padding:0 10px;
 }
 .subject-input textarea{
     border: none;
@@ -51,6 +52,13 @@
     text-align: center;
     border-bottom-left-radius: 15;
     background-color: transparent;
+}
+.new-mail-btn .delete{
+    height: 30px;
+    width: 30px;
+}
+.delete img{
+   height: 30px;
 }
 .new-mail-btn button:hover{
     background-color: transparent;

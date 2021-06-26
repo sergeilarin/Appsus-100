@@ -4,6 +4,7 @@
 .maile-app{
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
     
 }
 .options-container{
@@ -14,9 +15,27 @@
     display: flex;
     flex-direction: column;
     width: 240px;
+}
+.action-nav span{
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+.action-nav img{
+    width:25px;
+    height: 100%;
+    object-fit: contain;
+}
+.action-nav .inbox-btn {
 
+    background-color: rgb(209, 144, 144);
+    color: rgb(172, 5, 5);
 }
 .options-container button{
+    display: flex;
+    font-family: fantasy;
+    letter-spacing: 0.7px;
+    justify-content: space-between;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     text-align: start;
@@ -29,9 +48,8 @@
     width: 100%;
     
 }
-.compose-btn{
+.action-nav .compose-btn{
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
-    -webkit-font-smoothing: antialiased;
     font-family: 'Google Sans', Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     font-size: .875rem;
     letter-spacing: .25px;
@@ -43,9 +61,12 @@
     display: inline-flex;
     font-weight: 500;
     height: 48px;
-    min-width: 56px;
+    width: 130px;
     overflow: hidden;
     padding: 0 0 0 24px;
+    margin-bottom: 10px;
+    font-family: fantasy;
+    letter-spacing: 0.7px;
 }
 .options-container button:hover{
     background-color: rgb(209, 202, 202);
