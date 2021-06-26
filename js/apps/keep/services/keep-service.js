@@ -5,6 +5,7 @@ import { storageService } from '../../../services/async-storage-service.js'
 const KEEPS_KEY = 'notes';
 const gNotes = [{
     type: "textNote",
+    id: utilService.makeId(),
     isPinned: false,
     title: '',
     info: {
@@ -14,6 +15,7 @@ const gNotes = [{
     },
     {
     type: "todoNote",
+    id: utilService.makeId(),
     isPinned: false,
     title: '',
     info: {
@@ -27,10 +29,11 @@ const gNotes = [{
     },
     {
     type: "imagNote",
+    id: utilService.makeId(),
     isPinned: false,
     title: '',
     info: {
-       url: ""
+       url: "https://dalicanvas.co.il/wp-content/uploads/2020/02/%D7%A9%D7%A7%D7%99%D7%A2%D7%94-%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%AA-1.jpg"
     },
     background:''
     },

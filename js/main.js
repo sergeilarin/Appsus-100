@@ -1,14 +1,14 @@
 import appsusHeader from './cmps/appsus-header.js';
 import appsusFooter from './cmps/appsus-footer.js';
 import { router } from './routes.js';
-// import userMsg from './cmps/user-msg.js';
+import userMsg from './apps/keep/cmps/user-msg.js';
 
 const options = {
     el: '#app',
     router,
     template: `
         <section>
-        <!-- <user-msg /> -->
+        <user-msg />
             <appsus-header />
             <router-view />
             <appsus-footer />
@@ -18,7 +18,7 @@ const options = {
      
         appsusHeader,
         appsusFooter,
-        // userMsg
+        userMsg
     }
 };
 

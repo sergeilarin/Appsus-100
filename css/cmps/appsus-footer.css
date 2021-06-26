@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 .appsus-footer{
-    background-color: aqua;
+    background-color: rgb(162, 0, 255);
     display: flex;
     justify-content: center;
+    opacity: 0.7;
 }
