@@ -1,19 +1,24 @@
 @import './keep-css/keep-main.css';
 @import '../css/cmps/appsus-footer.css';
+@import '../css/cmps/appsus-header.css';
 @import '../css/mail.css/email-app.css';
 @import '../css/mail.css/email-details.css';
 @import '../css/mail.css/email-list.css';
 @import '../css/mail.css/email-preview.css';
 @import '../css/mail.css/email-filter.css';
 @import '../css/mail.css/new-email.css';
+@import '../css/pages/home-page.css';
 
 *{
     box-sizing: border-box;
 }
-.appsus-header{
+.maim-app{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between;
+    height: 97vh; */
 }
+
 .app-main img{
     height: 100%;
     width: 100%;

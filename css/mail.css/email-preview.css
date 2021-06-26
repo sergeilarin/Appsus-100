@@ -1,13 +1,44 @@
 *{
     box-sizing: border-box;
 }
+.emcon{
+    display: flex;
+    flex-direction: column;
+}
 
 .email-container{
+    height: 34px;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 .date{
     font-family: cursive;;
 }
-
+.prev-btn{
+    display: flex;
+    align-items: center;
+    height: 34px;
+    padding: 5px;
+}
+.prev-btn span{
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+    height: 34px;
+    width: 34px;
+    padding: 5px;
+}
+.prev-btn button{
+    text-align: center;
+    cursor: pointer;
+   min-width: 34px;
+    margin-left:7px;
+    background-color: transparent;
+    padding:0 0 0 0 ;
+}
+.prev-btn button:hover{
+background-color:lightsteelblue;
+border-radius: 50%;
+}

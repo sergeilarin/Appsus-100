@@ -10,15 +10,14 @@ export default {
     template: `
         <section class="maile-app">
             <email-filter @filtered="setFilter" /></email-filter>
-           
+           <div class="unread">Unread({{getUnreadNum}})</div>
             <div class="options-container">
                 <div class="action-nav">
-                   <button  @click="creatNewMail">+ Compose</button>
-                   <button>Inbox ({{emails.length}}) unread({{getUnreadNum}})</button>
-                   <button>Starred</button>
-                   <button >Sent Mail</button>
+                   <button class="compose-btn"  @click="creatNewMail">+ Compose</button>
+                   <button @click="showInboxtMail">Inbox ({{emails.length}})</button>
+                   <button @click="onStarred">Starred</button>
+                   <button @click="showSentMails">Sent Mail</button>
                    <button>Drafts</button>
-                   <button>Read</button>
                 </div>
                 <new-email v-if="isNewMail" @onSendEmail="sendEmail"></new-email>
                 <email-list v-else :emails="emailsToShow" @remove="removeEmail" @selected="selectEmail" ></email-list>
@@ -32,7 +31,7 @@ export default {
             selectedEmail: null,
             filterBy: null,
             isNewMail: false,
-            sentMail: []
+            sentMails: []
         };
     },
     created() {
@@ -46,6 +45,8 @@ export default {
                 });
         },
         removeEmail(id) {
+            const idx = this.sentMails.findIndex(sentMail=> sentMail.id === id);
+            this.sentMails.splice(idx, 1)
             emailService.removeEmail(id)
                 .then(() => {
                     this.loadEmails()
@@ -69,21 +70,42 @@ export default {
             this.isNewMail = true
         },
         sendEmail(email) {
-            this.sentMail.push(email)
-            console.log(this.sentMail);
-            this.isNewMail = false
+            this.sentMails.push(email)
+            // emailService.save(email)
             emailService.sendNewEmail(email)
-                .then(() => {
-                    this.loadEmails()
-                })
+            .then(() => {
+                this.loadEmails()
+            })
+            this.isNewMail = false
         },
+        showSentMails() {
+            this.filterBy = 'sentMails'
+           
+        },
+        showInboxtMail(){
+            this. isNewMail=false,
+            this.filterBy = ''
+        },
+        onStarred(){
+            this.filterBy = 'starred'
+        }
     },
     computed: {
         emailsToShow() {
+            console.log(this.emails);
             if (
                 !this.filterBy ||
                 (this.filterBy.txt === '')
             ) return this.emails;
+            if ( this.filterBy === 'starred') {
+                const starMail = this.emails.filter((email) => {
+                    return (
+                        email.isStarred === true
+                    );
+                });
+                return starMail
+            }
+            if (this.filterBy === 'sentMails') return this.sentMails
             const searchStr = this.filterBy.txt.toLowerCase();
             const emailsToShow = this.emails.filter((email) => {
                 return (
@@ -97,10 +119,9 @@ export default {
         getUnreadNum() {
             const num = this.emails.filter((email) => {
                 return (
-                    email.isRead===false
+                    email.isRead === false
                 );
             });
-            console.log(num);
             return num.length
         }
     },

@@ -13,11 +13,11 @@ export default {
 			<input v-model="newEmail.subject"  type="text" placeholder="">
 		</div>
 		<div class="subject-input">
-			<label >Subject: </label>
+			<label ></label>
 			<textarea name="" id="" cols="30" rows="10" v-model="newEmail.body"></textarea>
 			<!-- <input v-model="newEmail.body"  type="text" placeholder="''"> -->
 		</div>
-		<div class="new-mail-btn"><button @click="onSendEmail">v</button><button>x</button></div>
+		<div class="new-mail-btn"><button class="send" @click="onSendEmail">Send</button><button class="delete">x</button></div>
         
     </section>`,
 	data() {
@@ -27,6 +27,7 @@ export default {
 				subject: '',
 				body: '',
 				isRead: false,
+				isStarred:false,
 				sentAt: ''
 			},
 		};

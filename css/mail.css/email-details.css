@@ -2,9 +2,7 @@
     box-sizing: border-box;
 }
 .mail-detail{
-    width: 50%;
     position: absolute;
-    left: 230px;
     background-color: darkorange;
     width: 70%;
 }
@@ -18,11 +16,4 @@
    width: 0%;
    background-color: transparent;
    font-size: 20px;
-
 }
-
-
-/* width: 50%;
-    position: absolute;
-    left: 230px;
-} */

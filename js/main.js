@@ -7,7 +7,7 @@ const options = {
     el: '#app',
     router,
     template: `
-        <section>
+        <section class="maim-app">
         <!-- <user-msg /> -->
             <appsus-header />
             <router-view />

@@ -7,21 +7,18 @@ margin: 0 0 0 5px;
 padding: 5px;
 width: 100%;
 }
-.actions button{
-    border: 1px solid black;
-    border-radius:0 0 0 0 ;
-}
 .email-preview-container{
+    height: 34px;
     display: flex;
     align-items: center;
     margin-bottom: 2px;
     background-color: rgb(219, 214, 214);
-    padding-left: 10px;
+    padding: 10px;
 
     
 }
 .email-preview-container:hover{
     cursor: pointer;
-    height: 36px;
+    height: 34px;
     box-shadow: 0px 0px 6px 2px #000000;
 }

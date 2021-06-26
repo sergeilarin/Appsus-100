@@ -5,10 +5,7 @@ export default {
     template: `
     <ul class="email-list">
         <li v-for="email in emails" :key="email.id" class="email-preview-container">
-            <email-preview @click.native="select(email.id)" :email="email" />
-            <div class="actions">
-                <button @click="remove(email.id)">x</button>
-            </div>
+            <email-preview @click.native="select(email.id)" :email="email" @onremove="remove(email.id)" />
         </li>
     </ul>
     `,
@@ -25,3 +22,6 @@ export default {
     }
 
 };
+
+
+
